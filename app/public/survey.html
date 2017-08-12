@@ -195,68 +195,101 @@
 
 	</div>
 	<script>
+		// function runSurveyQuery() {
+		// 	var curentURL = window.location.origin;
+			
+		// 	$.ajax({url: currentURL + "/api/survey", method: "GET"})
+
+		// 		.done(function(surveyData) {
+
+		// 			console.log("_________________________");
+		// 			console.log("URL: " + currentURL + "/api/survey");
+		// 			console.log("_________________________");
+		// 			console.log(surveyData);
+		// 			console.log("_________________________");
+
+		// 			for (var i = 0; i<surveyData.length; i++) {
+		// 				console.log(surveyData);
+
+		// 				var surveySection = $("<div>");
+		// 				surveySection.addClass("well");
+		// 				surveySection.attr('id', 'surveyWell-' + i+1);
+		// 				$("surveySection").append(surveySection);
+
+		// 				var surveyName = i+1;
+		// 				//var tableNumber
+
+		// 				$("#surveyWell-" + i+1).append("<")
+		// 			}
+		// 		})
+		// }	
 		$(".submit").on("click", function(){
 
 		// Here we grab the form elements
-			var newHoplessRomantic = {
-				yourName: $('#your_name').val().trim(),
-				yourPhoto: $('#your_phone').val().trim(),
-				Q1: $('#dropdownMenuButton1').val().trim(),
-				Q2: $('#dropdownMenuButton2').val().trim()
-				Q3: $('#dropdownMenuButton3').val().trim()
-				Q4: $('#dropdownMenuButton4').val().trim()
-				Q5: $('#dropdownMenuButton5').val().trim()
-				Q6: $('#dropdownMenuButton6').val().trim()
-				Q7: $('#dropdownMenuButton7').val().trim()
-				Q8: $('#dropdownMenuButton8').val().trim()
-				Q9: $('#dropdownMenuButton9').val().trim()
-				Q10: $('#dropdownMenuButton10').val().trim()
+			var hopelessRomantic = 
+			{
+				yourName: $('#your_name').val(),
+				yourPhoto: $('#your_phone').val(),
+				Q1: $('#dropdownMenuButton1').val(),
+				Q2: $('#dropdownMenuButton2').val(),
+				Q3: $('#dropdownMenuButton3').val(),
+				Q4: $('#dropdownMenuButton4').val(),
+				Q5: $('#dropdownMenuButton5').val(),
+				Q6: $('#dropdownMenuButton6').val(),
+				Q7: $('#dropdownMenuButton7').val(),
+				Q8: $('#dropdownMenuButton8').val(),
+				Q9: $('#dropdownMenuButton9').val(),
+				Q10: $('#dropdownMenuButton10').val()
 
 			};
+			console.log(hopelessRomantic);
+		});
 
-			console.log(newHoplessRomantic);
+var hopelessRomanticArray = [];
 
-		// This line is the magic. It's very similar to the standard ajax function we used.
-		// Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-		// The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-		// depending on if a tables is available or not.
+hopelessRomanticArray.push(hopelessRomantic);
 
-		// Here we get the location of the root page.
-		// We use this instead of explicitly saying the URL is localhost:3001 because the url will change when we deploy.
-		var currentURL = window.location.origin;
+// 		// This line is the magic. It's very similar to the standard ajax function we used.
+// 		// Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+// 		// The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+// 		// depending on if a tables is available or not.
 
-			    $.post(currentURL + ".app/public/survey.html", newHoplessRomantic,
-	    function(data){
+// 		// Here we get the location of the root page.
+// 		// We use this instead of explicitly saying the URL is localhost:3001 because the url will change when we deploy.
+// 		var currentURL = window.location.origin;
 
-	    	// If a table is available... tell user they are booked.
-	    	if(data == true){
-	    		alert("Your survey was successful!")
-	    	}
+// 			    $.post(currentURL + ".app/public/survey.html", newHoplessRomantic,
+// 	    function(data){
 
-	    	// If a table is available... tell user they on the waiting list.
-	    	if(data == false){
-	    		alert("Sorry, no matches today")
-	    	}
+// 	    	// If a table is available... tell user they are booked.
+// 	    	if(data == true){
+// 	    		alert("Your survey was successful!")
+// 	    	}
 
-	    	// Clear the form when submitting
-			$('#your_name').val("");
-			$('#your_phone').val("");
-				// Q1: $('#dropdownMenuButton1').val().trim(),
-				// Q2: $('#dropdownMenuButton2').val().trim()
-				// Q3: $('#dropdownMenuButton3').val().trim()
-				// Q4: $('#dropdownMenuButton4').val().trim()
-				// Q5: $('#dropdownMenuButton5').val().trim()
-				// Q6: $('#dropdownMenuButton6').val().trim()
-				// Q7: $('#dropdownMenuButton7').val().trim()
-				// Q8: $('#dropdownMenuButton8').val().trim()
-				// Q9: $('#dropdownMenuButton9').val().trim()
-				// Q10: $('#dropdownMenuButton10').val().trim()
+// 	    	// If a table is available... tell user they on the waiting list.
+// 	    	if(data == false){
+// 	    		alert("Sorry, no matches today")
+// 	    	}
 
-	    });
+// 	    	// Clear the form when submitting
+// 			$('#your_name').val("");
+// 			$('#your_phone').val("");
+// 				// Q1: $('#dropdownMenuButton1').val().trim(),
+// 				// Q2: $('#dropdownMenuButton2').val().trim()
+// 				// Q3: $('#dropdownMenuButton3').val().trim()
+// 				// Q4: $('#dropdownMenuButton4').val().trim()
+// 				// Q5: $('#dropdownMenuButton5').val().trim()
+// 				// Q6: $('#dropdownMenuButton6').val().trim()
+// 				// Q7: $('#dropdownMenuButton7').val().trim()
+// 				// Q8: $('#dropdownMenuButton8').val().trim()
+// 				// Q9: $('#dropdownMenuButton9').val().trim()
+// 				// Q10: $('#dropdownMenuButton10').val().trim()
 
-return false;
+// 	    });
 
-});
+// return false;
+
+// });
 </script>
 </body>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
