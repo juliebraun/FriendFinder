@@ -1,34 +1,53 @@
 
 var friendsArray = [
 	{
-		friendName: "Banks",
-		friendPhoto: "Binky's Lovely Photo",
-		friendScore: "Percentage match: 97%",
-		friendLocation: "Denver",
-		friendLikes: "Froyo & Sticks",
-		friendDislikes: "Cats"
+		name: "George",
+		photo: "https://upload.wikimedia.org/wikipedia/en/7/70/George_Costanza.jpg",
+		scores: [
+		"2",
+		"3",
+		"2",
+		"4",
+		"2",
+		"4",
+		"4",
+		"3",
+		"2",
+		"1"
+		]
+	},
+	{
+		name: "Elane",
+		photo: "https://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/14/17/53-times-elaine-benes-was-the-biggest-hot-mess-on-2-6875-1400103756-1_dblbig.jpg",
+		scores: [
+		"4",
+		"5",
+		"3",
+		"2",
+		"3",
+		"2",
+		"3",
+		"2",
+		"5",
+		"5"
+		]
+	},
+	{
+		name: "Kramer",
+		photo: "https://asheathersworldturns.files.wordpress.com/2014/01/kramer053.jpg",
+		scores: [
+		"5",
+		"1",
+		"1",
+		"1",
+		"3",
+		"4",
+		"5",
+		"1",
+		"2",
+		"5"
+		]
 	}
 ];
 
 module.exports = friendsArray;
-
-
-	// var hoplessRomantic = [
-	// {
-	// 			yourName: $('#your_name').val().trim(),
-	// 			yourPhoto: $('#your_phone').val().trim(),
-	// 			Q1: $('#dropdownMenuButton1').val().trim(),
-	// 			Q2: $('#dropdownMenuButton2').val().trim(),
-	// 			Q3: $('#dropdownMenuButton3').val().trim(),
-	// 			Q4: $('#dropdownMenuButton4').val().trim(),
-	// 			Q5: $('#dropdownMenuButton5').val().trim(),
-	// 			Q6: $('#dropdownMenuButton6').val().trim(),
-	// 			Q7: $('#dropdownMenuButton7').val().trim(),
-	// 			Q8: $('#dropdownMenuButton8').val().trim(),
-	// 			Q9: $('#dropdownMenuButton9').val().trim(),
-	// 			Q10: $('#dropdownMenuButton10').val().trim()
-
-	// 		}
-	// 		];
-
-	// 		module.exports = hopelessRomanics;
